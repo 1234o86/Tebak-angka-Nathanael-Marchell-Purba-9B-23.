@@ -1,0 +1,206 @@
+/* Import Font */
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;700&display=swap');
+
+:root {
+    --primary-color: #ff6f61; /* Merah Muda/Coral */
+    --secondary-color: #6b5b95; /* Ungu */
+    --accent-color: #88b04b; /* Hijau */
+    --bg-color: #f7f7f7;
+    --text-dark: #333;
+    --text-light: #fff;
+}
+
+/* Global Styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Fredoka', sans-serif;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: var(--text-dark);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.game-container {
+    width: 90%;
+    max-width: 500px;
+    background-color: var(--bg-color);
+    border-radius: 25px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+    overflow: hidden;
+    padding: 30px;
+    text-align: center;
+}
+
+/* Header */
+header h1 {
+    font-size: 2.5rem;
+    color: var(--secondary-color);
+    text-shadow: 2px 2px 0 var(--primary-color);
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    color: var(--text-dark);
+}
+
+/* Score Board */
+.score-board {
+    display: flex;
+    justify-content: space-around;
+    padding: 15px;
+    margin-bottom: 20px;
+    background-color: #e0e0e0;
+    border-radius: 15px;
+    font-weight: bold;
+}
+
+.score-board span {
+    color: var(--primary-color);
+    font-size: 1.2rem;
+}
+
+/* Input Area */
+.input-area {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+#guess-input {
+    flex-grow: 1;
+    padding: 15px;
+    border: 3px solid var(--secondary-color);
+    border-radius: 15px;
+    font-size: 1.2rem;
+    text-align: center;
+    transition: border-color 0.3s;
+}
+
+#guess-input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+/* Buttons */
+button {
+    padding: 15px 25px;
+    border: none;
+    border-radius: 15px;
+    background-color: var(--secondary-color);
+    color: var(--text-light);
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.1s;
+    box-shadow: 0 4px 0 #4f416e;
+}
+
+button:hover:not(:disabled) {
+    background-color: #7b6d9c;
+}
+
+button:active:not(:disabled) {
+    transform: translateY(2px);
+    box-shadow: 0 2px 0 #4f416e;
+}
+
+button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+#restart-button {
+    background-color: var(--accent-color);
+    box-shadow: 0 4px 0 #6e8e3d;
+    width: 100%;
+    margin-top: 20px;
+}
+
+#restart-button:active {
+    box-shadow: 0 2px 0 #6e8e3d;
+}
+
+/* Result Area */
+.result-area {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 15px;
+    border: 1px solid #ddd;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.05);
+}
+
+#hint-message {
+    font-size: 1.5rem;
+    font-weight: 700;
+    min-height: 40px; /* Menjaga agar elemen tidak bergeser */
+    color: var(--text-dark);
+}
+
+/* History */
+.history-box {
+    margin-top: 15px;
+    text-align: left;
+}
+
+.history-box h3 {
+    font-size: 1.2rem;
+    color: var(--secondary-color);
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+}
+
+#guess-history {
+    list-style: none;
+    padding-left: 0;
+    max-height: 150px;
+    overflow-y: auto;
+    border: 1px dashed #ccc;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+#guess-history li {
+    padding: 5px 0;
+    border-bottom: 1px dotted #eee;
+    font-size: 1rem;
+}
+
+/* Utility Classes for Feedback */
+.hint.win {
+    color: var(--accent-color);
+    animation: bounce 0.5s 3;
+}
+.hint.high {
+    color: var(--primary-color);
+}
+.hint.low {
+    color: var(--secondary-color);
+}
+.hidden {
+    display: none !important;
+}
+
+/* Animation */
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+    40% {transform: translateY(-10px);}
+    60% {transform: translateY(-5px);}
+}
+
+/* Footer */
+footer {
+    margin-top: 20px;
+    font-size: 0.8rem;
+    color: #888;
+}

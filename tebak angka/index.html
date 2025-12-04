@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎯 Tebak Angka Misterius</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="game-container">
+        
+        <header>
+            <h1>GUESS THE MYSTERY NUMBER!</h1>
+            <p>Tebak angka misterius antara **1 sampai 100**.</p>
+        </header>
+
+        <section class="game-area">
+            
+            <div class="score-board">
+                <p>Percobaan: <span id="attempt-count">0</span></p>
+                <p>Highscore: <span id="high-score">0</span></p>
+            </div>
+            
+            <div class="input-area">
+                <input type="number" id="guess-input" placeholder="Masukkan tebakan Anda...">
+                <button id="guess-button">TEBAK!</button>
+            </div>
+            
+            <div class="result-area">
+                <p id="hint-message" class="hint">Mulai main sekarang!</p>
+                
+                <div class="history-box">
+                    <h3>Riwayat Tebakan:</h3>
+                    <ul id="guess-history">
+                        </ul>
+                </div>
+            </div>
+
+            <button id="restart-button" class="hidden">MULAI BARU (Restart)</button>
+        </section>
+
+        <footer>
+            <p>&copy; Game Tebak Angka Sederhana</p>
+        </footer>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
